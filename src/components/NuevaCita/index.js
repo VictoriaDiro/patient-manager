@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
 
 class NuevaCita extends Component {
-  state = {}
+  state = {
+    cita: {
+      mascota: '',
+      propietario: '',
+      fecha: '',
+      hora: '',
+      sintomas: ''
+    }
+  }
+
+  handeChange = e => {
+    this.setState({
+      cita: {
+        [e.target.name]: e.target.value
+      }
+    })
+  }
 
   render() {
     return (
@@ -23,6 +39,7 @@ class NuevaCita extends Component {
                   className="form-contol"
                   placeholder="Nombre Mascota"
                   name="mascota"
+                  onChange={this.handleChange}
                 />
               </div>
             </div>
