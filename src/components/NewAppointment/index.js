@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
 
-const stateInicial = {
-  cita: {
+const inicialState = {
+  appointment: {
     mascota: '',
     propietario: '',
     fecha: '',
@@ -13,53 +13,53 @@ const stateInicial = {
   error: false
 }
 
-class NuevaCita extends Component {
-  state = { ...stateInicial }
+class NewAppointment extends Component {
+  state = { ...inicialState }
 
-  // Cuando el usuario escribe en los inputs
+  // Cambio de valor en en 'input'
   handleChange = e => {
-    // Pasar lo que el usuario escribe al state
+    // Pasar el valor que el usuario redacta al 'state'
     this.setState({
-      cita: {
-        ...this.state.cita,
+      appointment: {
+        ...this.state.appointment,
         [e.target.name]: e.target.value
       }
     })
   }
 
-  // Cuando el usuario envía el formulario
+  // Envío del formulario
   handleSubmit = e => {
     e.preventDefault();
 
     // Extraer los valores del state
-    const { mascota, propietario, fecha, hora, sintomas } = this.state.cita;
+    const { mascota, propietario, fecha, hora, sintomas } = this.state.appointment;
 
-    // Validad que todos los campos estén llenos
+    // Validar que todos los campos estén llenos
     if(mascota === '' || propietario === '' || fecha === '' || hora === '' || sintomas === '') {
       this.setState({
         error: true
       });
 
-      // detener la ejecución
+      // Detener la ejecución
       return;
     }
 
-    // generar un objeto con los datos
-    const nuevaCita = {...this.state.cita};
-    nuevaCita.id = uuid();
+    // Generar un objeto con los datos
+    const newAppointment = {...this.state.appointment};
+    newAppointment.id = uuid();
 
-    // Agregar la cita al state de App
-    this.props.crearNuevaCita(nuevaCita)
+    // Agregar la cita al 'state' de App
+    this.props.addNewAppointment(newAppointment)
 
-    // Colocar el state en el stateInicial
+    // Colocar el 'state' en el 'inicialState'
     this.setState({
-      ...stateInicial
+      ...inicialState
     })
   }
 
   render() {
 
-    // extraer el valor del state
+    // Extraer el valor del state
     const { error } = this.state;
 
     return (
@@ -159,9 +159,9 @@ class NuevaCita extends Component {
   }
 }
 
-NuevaCita.propTypes = {
-  crearNuevaCita: PropTypes.func.isRequired
+NewAppointment.propTypes = {
+  addNewAppointment: PropTypes.func.isRequired
 }
 
 
-export default NuevaCita;
+export default NewAppointment;
