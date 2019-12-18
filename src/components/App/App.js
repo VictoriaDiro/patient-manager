@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Header from '../Header/index';
 import NewAppointment from '../NewAppointment/index';
 import AppointmentsList from '../AppointmentsList/index';
-import './../../bootstrap.min.css';
+// import './../../bootstrap.min.css';
+import './App.scss';
 
 class App extends Component {
   state = {
@@ -49,18 +50,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Header
-          title='Administrador Pacientes Veterinaria'
-        />
-        <div className="row">
-          <div className="col-md-10 mx-auto">
+      <div className="container app__container">
+        <div className="header__container">
+          <Header
+            title='Administrador Pacientes Veterinaria'
+          />
+        </div>
+        <div className="row form__container">
+          <div className="col-md-10 mx-auto new-appointment__container">
             <NewAppointment
               addNewAppointment={this.addNewAppointment}
             />
           </div>
 
-          <div className="mt-5 col-md-10 mx-auto">
+          <div className="mt-5 col-md-10 mx-auto appointment-list__container">
             <AppointmentsList
               appointments={this.state.appointments}
               deleteAppointment={this.deleteAppointment}

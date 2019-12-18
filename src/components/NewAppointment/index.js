@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
+import './styles.scss';
 
 const inicialState = {
   appointment: {
@@ -63,9 +64,9 @@ class NewAppointment extends Component {
     const { error } = this.state;
 
     return (
-      <div className="card mt-5 py-5">
-        <div className="card-body">
-          <h2 className="card-title text-center md-5">
+      <div className="">
+        <div className="">
+          <h2 className="">
             Rellene el formulario para crear una nueva cita
           </h2>
 
@@ -75,15 +76,15 @@ class NewAppointment extends Component {
             onSubmit={this.handleSubmit}
           >
 
-            <div className="form-group row">
+            <div className="form-group row form__row form__pet-name">
               <label className="col-sm-4 col-lg-3 col-form-label">
-                Nombre de la Mascota
+                Nombre de la Mascota: 
               </label>
               <div className="col-sm-8 col-lg-9">
                 <input
                   type="text"
-                  className="form-contol"
-                  placeholder="Nombre Mascota"
+                  className="form-contol form__input form__pet-name--input"
+                  placeholder="Nombre mascota"
                   name="mascota"
                   onChange={this.handleChange}
                   value={this.state.mascota}
@@ -98,7 +99,7 @@ class NewAppointment extends Component {
               <div className="col-sm-8 col-lg-9">
                 <input
                   type="text"
-                  className="form-contol"
+                  className="form-contol form__input"
                   placeholder="Nombre Dueño Mascota"
                   name="propietario"
                   onChange={this.handleChange}
@@ -114,7 +115,7 @@ class NewAppointment extends Component {
               <div className="col-sm-8 col-lg-3">
                 <input
                   type="date"
-                  className="form-contol"
+                  className="form-contol form__input"
                   name="fecha"
                   onChange={this.handleChange}
                   value={this.state.fecha}
@@ -127,7 +128,7 @@ class NewAppointment extends Component {
               <div className="col-sm-8 col-lg-3">
                 <input
                   type="time"
-                  className="form-contol"
+                  className="form-contol form__input"
                   name="hora"
                   onChange={this.handleChange}
                   value={this.state.hora}
@@ -141,7 +142,7 @@ class NewAppointment extends Component {
               </label>
               <div className="col-sm-8 col-lg-9">
                 <textarea
-                  className="form-contol"
+                  className="form-contol form__input"
                   placeholder="Describe los síntomas"
                   name="sintomas"
                   onChange={this.handleChange}
