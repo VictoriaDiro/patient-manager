@@ -14,7 +14,7 @@ const AppointmentsList = ({appointments, deleteAppointment}) => {
         <h2 className="card-title text-center">
           {message}
         </h2>
-  
+
         <div className="lista-citas">
           {appointments.map(appointment => (
             <Appointment

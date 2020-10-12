@@ -10,7 +10,7 @@ const inicialState = {
     fecha: '',
     hora: '',
     sintomas: ''
-  }, 
+  },
   error: false
 }
 
@@ -78,7 +78,7 @@ class NewAppointment extends Component {
 
             <div className="form-group row form__row form__pet-name">
               <label className="col-sm-4 col-lg-3 col-form-label">
-                Nombre de la Mascota: 
+                Nombre de la Mascota:
               </label>
               <div className="col-sm-8 col-lg-9">
                 <input
@@ -108,11 +108,11 @@ class NewAppointment extends Component {
               </div>
             </div>
 
-            <div className="form-group row">
+            <div className="form-group date-section row">
               <label className="col-sm-4 col-lg-3 col-form-label">
                 Fecha:
               </label>
-              <div className="col-sm-8 col-lg-3">
+              <div className="col-sm-8 col-lg-3 input-date">
                 <input
                   type="date"
                   className="form-contol form__input"
@@ -122,7 +122,7 @@ class NewAppointment extends Component {
                 />
               </div>
 
-              <label className="col-sm-4 col-lg-3 col-form-label">
+              <label className="col-sm-4 col-lg-3 col-form-label hour">
                 Hora:
               </label>
               <div className="col-sm-8 col-lg-3">
@@ -143,6 +143,7 @@ class NewAppointment extends Component {
               <div className="col-sm-8 col-lg-9">
                 <textarea
                   className="form-contol form__input"
+                  rows="8"
                   placeholder="Describe los síntomas"
                   name="sintomas"
                   onChange={this.handleChange}
@@ -151,7 +152,9 @@ class NewAppointment extends Component {
               </div>
             </div>
 
-            <input type="submit" className="py-3 mt-2 btn btn-success btn-block" value="Añadir nueva cita" />
+            <div className="button__container">
+              <input type="submit" className="py-3 mt-2 btn btn-success btn-block submit__button" value="Añadir nueva cita" />
+            </div>
 
           </form>
         </div>

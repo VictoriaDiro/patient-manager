@@ -1,0 +1,28 @@
+.media {
+   padding: 10px 20px;
+   background-color: #a9a9a973;
+   border-radius: 10px;
+   .media-body {
+      div {
+         display: flex;
+         justify-content: space-between;
+      }
+      .button__delete-container {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         button {
+            height: 30px;
+            width: 100px;
+            font-weight: 600;
+            color: #ffffff;
+            border: none;
+            border-radius: 9px;
+            background-color: #ff6565;
+         }
+      }
+   }
+}
+
+

@@ -10,7 +10,7 @@ class App extends Component {
     appointments: []
   }
 
-  // Se invoca inmediatamente después de que un componente se monte 
+  // Se invoca inmediatamente después de que un componente se monte
   componentDidMount() {
     const appointmentsLS = localStorage.getItem('appointments');
     if(appointmentsLS) {
