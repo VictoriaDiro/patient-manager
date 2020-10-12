@@ -1,11 +1,21 @@
+h2 {
+  font-size: 1.2rem;
+}
+
 .form-group {
   margin: 10px 0px 10px 0px;
   display: flex;
+  @media (max-width: 530px) {
+    display: inline;
+  }
   label {
     width: 40%;
   }
   div {
     width: 60%;
+    @media (max-width: 530px) {
+      width: 100%;
+    }
     .form__input {
       width: 100%;
       padding: 7px 15px;
@@ -28,22 +38,48 @@
 }
 
 .form-group.date-section {
-  width: 100%;
-  label {
-    width: 25%;
-    margin-top: 3px;
+  display: flex;
+  @media (max-width: 760px) {
+    flex-direction: column;
   }
-  label.hour {
-    margin-left: 55px;
-  }
-  div {
-    width: 25%;
-    input {
-      width: 100%;
+  div.date__container {
+    width: 100%;
+    display: flex;
+    label {
+      width: 25%;
+      margin-top: 3px;
+      @media (max-width: 760px) {
+        width: 40%;
+      }
+    }
+    div.input-date {
+      width: 62%;
+      @media (max-width: 530px) {
+        width: 100%;
+      }
     }
   }
-  div.input-date {
-    width: 26%;
+
+  div.hour__container {
+    width: 100%;
+    margin-left: 50px;
+    display: flex;
+    @media (max-width: 760px) {
+      margin-top: 10px;
+      margin-left: 0;
+    }
+    label.hour {
+      margin-left: 55px;
+      @media (max-width: 760px) {
+        margin-left: 0;
+      }
+    }
+    div {
+      width: 60%;
+      input {
+        width: 100%;
+      }
+    }
   }
 }
 

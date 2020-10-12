@@ -109,30 +109,34 @@ class NewAppointment extends Component {
             </div>
 
             <div className="form-group date-section row">
-              <label className="col-sm-4 col-lg-3 col-form-label">
-                Fecha:
-              </label>
-              <div className="col-sm-8 col-lg-3 input-date">
-                <input
-                  type="date"
-                  className="form-contol form__input"
-                  name="fecha"
-                  onChange={this.handleChange}
-                  value={this.state.fecha}
-                />
+              <div className="date__container">
+                <label className="col-sm-4 col-lg-3 col-form-label">
+                  Fecha:
+                </label>
+                <div className="col-sm-8 col-lg-3 input-date">
+                  <input
+                    type="date"
+                    className="form-contol form__input"
+                    name="fecha"
+                    onChange={this.handleChange}
+                    value={this.state.fecha}
+                  />
+                </div>
               </div>
 
-              <label className="col-sm-4 col-lg-3 col-form-label hour">
-                Hora:
-              </label>
-              <div className="col-sm-8 col-lg-3">
-                <input
-                  type="time"
-                  className="form-contol form__input"
-                  name="hora"
-                  onChange={this.handleChange}
-                  value={this.state.hora}
-                />
+              <div className="hour__container">
+                <label className="col-sm-4 col-lg-3 col-form-label hour">
+                  Hora:
+                </label>
+                <div className="col-sm-8 col-lg-3">
+                  <input
+                    type="time"
+                    className="form-contol form__input"
+                    name="hora"
+                    onChange={this.handleChange}
+                    value={this.state.hora}
+                  />
+                </div>
               </div>
             </div>
 
