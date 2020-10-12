@@ -10,6 +10,7 @@ h2 {
   }
   label {
     width: 40%;
+    margin-right: 3px;
   }
   div {
     width: 60%;
@@ -47,7 +48,7 @@ h2 {
     display: flex;
     label {
       width: 25%;
-      margin-top: 3px;
+      margin: 3px 3px 0px 0px;
       @media (max-width: 760px) {
         width: 40%;
       }
@@ -62,14 +63,14 @@ h2 {
 
   div.hour__container {
     width: 100%;
-    margin-left: 50px;
+    margin-left: 30px;
     display: flex;
     @media (max-width: 760px) {
       margin-top: 10px;
       margin-left: 0;
     }
     label.hour {
-      margin-left: 55px;
+      margin: 3px 3px 0px 0px;
       @media (max-width: 760px) {
         margin-left: 0;
       }
